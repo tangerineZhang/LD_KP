@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+
+    <link href="~/Scripts/StyleSheet1.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div>
+
+
+
+        <script type="text/javascript">
+            // 等待所有加载
+            $(window).load(function () {
+                $('body').addClass('loaded');
+                $('#loader-wrapper .load_title').remove();
+            });
+        </script>
+
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+            <div class="load_title">正在加载...<br><span></span></div>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="~/js/webView.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            //do something
+
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+            var h5_config = {};
+            var token = "";
+            if (isiOS) {
+                window.h5InitConfigCallback = function (d) {
+                    if (typeof (d) != "undefined") {
+                        h5_config = JSON.parse(d);
+                        localStorage.token = h5_config.token;
+                        localStorage.baseUrl = h5_config.apiURLPrefix;
+                        token = h5_config.token;
+                        //next();
+                        alert(token);
+                        location.href = '/YQ/EmployeeList?token=' + token;
+                    }
+                }
+                webView.callNative("h5InitConfig")
+            }
+            else if (isAndroid) {
+                alert(1);
+                if (typeof (window.eoopWebView) != "undefined") {
+                    h5_config = window.eoopWebView.h5InitConfig();
+                    alert(h5_config);
+                    h5_config = JSON.parse(h5_config);
+
+                    localStorage.token = h5_config.token;
+                    token = h5_config.token;
+
+                    localStorage.baseUrl = h5_config.apiURLPrefix;
+
+                    //next();
+                    location.href = '/YQ/EmployeeList?token=' + token;
+                }
+            }
+
+            //alert('登录成功');
+        })
+
+    </script>
+</body>
+</html>

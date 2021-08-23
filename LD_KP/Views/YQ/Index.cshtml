@@ -1,0 +1,627 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>绿都地产供应商疫情影响问卷</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Core Css -->
+    @*<link href="~/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">*@
+    <!-- Waves Effect Css -->
+    @*<link href="~/plugins/node-waves/waves.css" rel="stylesheet" />*@
+    <!-- Animation Css -->
+    @*<link href="~/plugins/animate-css/animate.css" rel="stylesheet" />*@
+    <!-- Morris Chart Css-->
+    @*<link href="~/plugins/morrisjs/morris.css" rel="stylesheet" />*@
+    <!-- Multi Select Css -->
+    @*<link href="~/plugins/multi-select/css/multi-select.css" rel="stylesheet">*@
+    <!-- Bootstrap Spinner Css -->
+    @*<link href="~/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">*@
+    <!-- Bootstrap Select Css -->
+    @*<link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />*@
+    <!-- Custom Css -->
+    @*<link href="~/css/style.css" rel="stylesheet">*@
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    @*<link href="~/css/themes/all-themes.css" rel="stylesheet" />*@
+
+    <!-- Bootstrap Core Css -->
+    <link href="~/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Waves Effect Css -->
+    <link href="~/plugins/node-waves/waves.css" rel="stylesheet" />
+    <!-- Animation Css -->
+    <link href="~/plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Colorpicker Css -->
+    <link href="~/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+    <!-- Dropzone Css -->
+    <link href="~/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <!-- Multi Select Css -->
+    <link href="~/plugins/multi-select/css/multi-select.css" rel="stylesheet">
+    <!-- Bootstrap Spinner Css -->
+    <link href="~/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+    <!-- Bootstrap Tagsinput Css -->
+    <link href="~/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+    <!-- Bootstrap Select Css -->
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <!-- noUISlider Css -->
+    <link href="~/plugins/nouislider/nouislider.min.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="~/css/themes/all-themes.css" rel="stylesheet" />
+
+    <style>
+        .card label {
+            font-size: 1.2em;
+        }
+
+        .card input {
+            font-size: 1.2em;
+        }
+
+        .card textarea {
+            font-size: 1.2em;
+        }
+
+        section.content {
+            margin: 60px 15px 0 315px;
+            -moz-transition: 0.5s;
+            -o-transition: 0.5s;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+        }
+
+        .card {
+            background: #fff;
+            min-height: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            margin-bottom: 30px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -ms-border-radius: 2px;
+            border-radius: 2px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body class="theme-red">
+
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    @*<div class="search-bar">
+            <div class="search-icon">
+                <i class="material-icons">search</i>
+            </div>
+            <input type="text" placeholder="搜索名称/事业部">
+            <div class="close-search">
+                <i class="material-icons">close</i>
+            </div>
+        </div>*@
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src="~/images/logo.png" width="140" height="40" />
+                @*<a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>*@
+                @*<a href="javascript:void(0);" class="navbar-toggle js-search" data-close="true"><i class="material-icons">search</i></a>*@
+
+                @*<a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>*@
+
+                @*<a href="javascript:void(0);" class="bars"></a>*@
+                <a class="" style="color: #ffffff; font-size: 16px;margin-left:15px;" href="index.html">|</a>
+                <a class="" style="color: #ffffff; font-weight: bold; font-size: 18px;margin-left:10px;" href="index.html">供应商疫情影响问卷</a>
+                @*<a class="navbar-brand" href="index.html">ADMINBSB - MATERIAL DESIGN</a>*@
+
+                @*<a onclick="copyText()"><i class="material-icons pull-right col-blue">content_copy</i> </a>*@
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    @*<li class="pull-right"><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>*@
+                    <!-- #END# Call Search -->
+                    <!-- Notifications -->
+                    <!-- #END# Notifications -->
+                    <!-- Tasks -->
+                    <!-- #END# Tasks -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+
+
+
+    <div class="card">
+        @*<div class="header">*@
+        @*<h2>
+                绿都地产供应商疫情信息统计表
+            </h2>*@
+        <small>
+            <div style="padding:0px 15px 0px 15px; background-color: #f5f5f5; ">
+                <br />
+                尊敬的绿都合作伙伴：<br />
+                &nbsp; &nbsp; &nbsp; &nbsp; 近期各地陆续爆发新型冠状病毒感染的肺炎，面对突发而来的疫情，绿都地产为应对疫情影响，积极安排相关措施，降低疫情对后续项目的负面影响，需各合作伙伴积极配合填写本问卷。感谢您对绿都地产一如既往的支持！ <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; 本问卷采集，只用于绿都地产内部统计分析，不会外传。<br />
+                <br />
+                绿都地产<br />
+                二O二O年二月六日<br />
+                <br />
+            </div>
+        </small>
+        @*<ul class="header-dropdown m-r--5">
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons">more_vert</i>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="javascript:void(0);">Action</a></li>
+                        <li><a href="javascript:void(0);">Another action</a></li>
+                        <li><a href="javascript:void(0);">Something else here</a></li>
+                    </ul>
+                </li>
+            </ul>*@
+        @*</div>*@
+
+        <div class="body">
+            <form id="form_validation" method="POST">
+                <div class="demo-masked-input">
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <b>供应商单位全称<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">contacts</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="company" type="text" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b>公司所在城市<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">place</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="cCity" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b>工厂所在城市<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">pin_drop</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="fCity" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b>供应商计划复工日期<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">date_range</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="returnDate" type="text" class="form-control" placeholder="2019/12/31">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        @*<div class="col-md-3">
+                                <p>
+                                    <b>Max Selection Limit: 2</b>
+                                </p>
+                                <select class="form-control show-tick" multiple>
+                                    <optgroup label="Condiments" data-max-options="2">
+                                        <option>Mustard</option>
+                                        <option>Ketchup</option>
+                                        <option>Relish</option>
+                                    </optgroup>
+                                    <optgroup label="Breads" data-max-options="2">
+                                        <option>Plain</option>
+                                        <option>Steamed</option>
+                                        <option>Toasted</option>
+                                    </optgroup>
+                                </select>
+                            </div>*@
+                        <div class="col-md-3">
+                            <p>
+                                <b>生产经营受疫情影响程度<span style="color:red;">*</span></b>
+                            </p>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">bubble_chart</i>
+                                </span>
+                                <select id="influence" class="form-control show-tick">
+                                    <option>无影响</option>
+                                    <option>影响较小</option>
+                                    <option>影响较大</option>
+                                    <option>影响严重</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b>在绿都供应商属性<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">storage</i>
+                                </span>
+                                <div class="form-line">
+
+                                    <select id="sProperties" class="form-control show-tick">
+                                        <option>集采供应商</option>
+                                        <option>非集采供应商</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b>服务绿都项目范围<span style="color:red;">*</span></b>
+
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">photo_size_select_small</i>
+                                </span>
+                                <div class="form-line">
+
+                                    <select id="sScope" class="form-control show-tick">
+                                        <option>全集团</option>
+                                        <option>郑州及洛阳事业部</option>
+                                        <option>上海杭州合肥事业部</option>
+                                        <option>郑州事业部</option>
+                                        <option>洛阳事业部</option>
+                                        <option>杭州事业部</option>
+                                        <option>上海事业部</option>
+                                        <option>合肥事业部</option>
+                                        <option>物业公司</option>
+                                        <option>颢丰建工</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="col-md-3">
+                                <p>
+                                    <b>Multiple Select</b>
+                                </p>
+                                <select class="form-control show-tick" multiple>
+                                    <option>全集团;</option>
+                                    <option>郑州事业部;</option>
+                                    <option>洛阳事业部;</option>
+                                    <option>上海事业部;</option>
+                                    <option>杭州事业部;</option>
+                                    <option>合肥事业部;</option>
+                                </select>
+                            </div>*@
+                        <div class="col-md-3">
+                            <b>疫情是否影响绿都项目的供货施工<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">euro_symbol</i>
+                                </span>
+
+                                <select id="isaffect" class="form-control show-tick" onchange="isaffect_onchange()">
+                                    <option>是</option>
+                                    <option>否</option>
+                                    <option style="color:red;">暂未接到绿都供货施工通知</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row clearfix">
+
+                        <div class="col-md-3">
+                            <b id="bProjectInfo">疫情影响绿都供货施工的项目名称<span id="spanProjectInfo" style="color:red;">*</span></b>
+                            @*<small style="color:red;">（多项目的请逐行填写）</small>*@
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">computer</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="projectInfo" type="text" class="form-control" placeholder="A项目、B项目">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b id="bProjectNode">本工程受影响的具体工程节点<span id="spanProjectNode" style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">credit_card</i>
+                                </span>
+                                <select id="projectNode" class="form-control show-tick">
+                                    <option>首次进场节点</option>
+                                    <option>中间进度节点</option>
+                                    <option>结构封顶节点</option>
+                                    <option>完工节点</option>
+                                    <option>竣备节点</option>
+                                    <option>交房节点</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b id="bIDays">预计影响天数（日历天）<span id="spanIDays" style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">event_available</i>
+                                </span>
+                                <div class="form-line">
+                                    @*<input type="text" class="form-control email" placeholder="Ex: example@example.com">*@
+                                    <input id="iDays" type="text" class="form-control" value="" data-rule="quantity">
+                                    @*<div class="input-group spinner" data-trigger="spinner">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control text-center" value="1" data-rule="quantity">
+                                            </div>
+                                            <span class="input-group-addon">
+                                                <a href="javascript:;" class="spin-up" data-spin="up"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                                                <a href="javascript:;" class="spin-down" data-spin="down"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                                            </span>
+                                        </div>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b id="bDescribe">具体影响情况的详细描述<span id="spanDescribe" style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="describe" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <b>填报人姓名<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">person</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="applicant" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b>填报人手机联系号码<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">phone_iphone</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="applicantTel" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-primary m-t-15 waves-effect pull-right" onclick="submit_onclick()">提交</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript">
+
+        function copyText() {
+            var input = document.getElementById("input");
+            input.select(); // 选中文本
+            document.execCommand("copy"); // 执行浏览器复制命令
+            alert("复制成功");
+        }
+
+        function isaffect_onchange() {
+            var isaffect = $("#isaffect option:selected").text();
+
+            if (isaffect == "暂未接到绿都供货施工通知") {
+
+                $("#spanProjectInfo").remove();
+                $("#spanProjectNode").remove();
+                $("#spanIDays").remove();
+                $("#spanDescribe").remove();
+            }
+            else {
+
+                $("#spanProjectInfo").remove();
+                $("#spanProjectNode").remove();
+                $("#spanIDays").remove();
+                $("#spanDescribe").remove();
+                $("#bProjectInfo").append("<span id=\"spanProjectInfo\" style=\"color:red;\">*</span>");
+                $("#bProjectNode").append("<span id=\"spanProjectNode\" style=\"color:red;\">*</span>");
+                $("#bIDays").append("<span id=\"spanIDays\" style=\"color:red;\">*</span>");
+                $("#bDescribe").append("<span id=\"spanDescribe\" style=\"color:red;\">*</span>");
+            }
+        }
+
+        function submit_onclick() {
+            var company = $("#company").val();
+            var cCity = $("#cCity").val();
+            var fCity = $("#fCity").val();
+            var returnDate = $("#returnDate").val();
+            var influence = $("#influence option:selected").text();
+            var sProperties = $("#sProperties option:selected").text();
+            var sScope = $("#sScope option:selected").text();
+            var isaffect = $("#isaffect option:selected").text();
+            var projectInfo = $("#projectInfo").val();
+            var projectNode = $("#projectNode option:selected").text();
+            var iDays = $("#iDays").val();
+            var describe = $("#describe").val();
+            var applicant = $("#applicant").val();
+            var applicantTel = $("#applicantTel").val();
+
+            if (isaffect != "暂未接到绿都供货施工通知") {
+                if (company == "" || cCity == "" || fCity == "" || returnDate == "" || influence == ""
+                    || sProperties == "" || sScope == "" || isaffect == ""
+                    || projectInfo == "" || projectNode == "" || iDays == "" || describe == ""
+                    || applicant == "" || applicantTel == ""
+                    ) {
+                    alert("请填写必填项！");
+                    return;
+                }
+            }
+            else {
+                if (company == "" || cCity == "" || fCity == "" || returnDate == "" || influence == ""
+                   || sProperties == "" || sScope == "" || isaffect == ""
+                   || applicant == "" || applicantTel == ""
+                   ) {
+                    alert("请填写必填项！");
+                    return;
+                }
+            }
+            //验证供应商计划复工日期
+            isDate(returnDate);
+            //验证预计影响天数（日历天）
+            if (isaffect != "暂未接到绿都供货施工通知") {
+                if ($.isNumeric(iDays) == false) {
+                    alert("请填写正确的“预计影响天数（日历天）”！");
+                    return;
+                }
+            }
+            else {
+                iDays = 0;
+            }
+            if (isPhoneNo(applicantTel) == false) {
+                alert("请填写正确的“填报人手机号码”！");
+                return;
+            }
+
+            $.post("/YQ/AddYQ", {
+                company: company,
+                cCity: cCity,
+                fCity: fCity,
+                returnDate: returnDate,
+                influence: influence,
+                sProperties: sProperties,
+                sScope: sScope,
+                isaffect: isaffect,
+                projectInfo: projectInfo,
+                projectNode: projectNode,
+                iDays: iDays,
+                describe: describe,
+                applicant: applicant,
+                applicantTel: applicantTel
+            }, function (response) {
+                alert(response);
+                if (response == '提交成功！') {
+                    window.location.reload();
+                }
+            });
+
+        }
+
+        function isDate(dateString) {
+            if (dateString.trim() == "") {
+                alert("请输入日期");
+                return false;
+            }
+            var r = dateString.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/);
+            if (r == null) {
+                alert("请输入格式正确的日期\n\r日期格式：yyyy-mm-dd\n\r例    如：2020-01-01\n\r");
+                return false;
+            }
+            var d = new Date(r[1], r[3] - 1, r[4]);
+            var num = (d.getFullYear() == r[1] && (d.getMonth() + 1) == r[3] && d.getDate() == r[4]);
+            if (num == 0) {
+                alert("请输入格式正确的日期\n\r日期格式：yyyy-mm-dd\n\r例    如：020-01-01\n\r");
+            }
+            return (num != 0);
+        }
+
+        // 验证手机号
+        function isPhoneNo(phone) {
+            var pattern = /^1[34578]\d{9}$/;
+            return pattern.test(phone);
+        }
+    </script>
+
+
+
+    <!-- Jquery Core Js -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="~/plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Select Plugin Js -->
+    <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="~/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- Bootstrap Colorpicker Js -->
+    <script src="~/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <!-- Dropzone Plugin Js -->
+    <script src="~/plugins/dropzone/dropzone.js"></script>
+    <!-- Input Mask Plugin Js -->
+    <script src="~/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+    <!-- Multi Select Plugin Js -->
+    <script src="~/plugins/multi-select/js/jquery.multi-select.js"></script>
+    <!-- Jquery Spinner Plugin Js -->
+    <script src="~/plugins/jquery-spinner/js/jquery.spinner.js"></script>
+    <!-- Bootstrap Tags Input Plugin Js -->
+    <script src="~/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+    <!-- noUISlider Plugin Js -->
+    <script src="~/plugins/nouislider/nouislider.js"></script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="~/plugins/node-waves/waves.js"></script>
+    <!-- Custom Js -->
+    <script src="~/js/admin.js"></script>
+    <script src="~/js/pages/forms/advanced-form-elements.js"></script>
+    <!-- Jquery Validation Plugin Css -->
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <!-- Demo Js -->
+    <script src="~/js/demo.js"></script>
+</body>
+</html>

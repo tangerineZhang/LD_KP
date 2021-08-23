@@ -1,0 +1,578 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>绿都来访需求信息申报（访客填写）</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Core Css -->
+    @*<link href="~/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">*@
+    <!-- Waves Effect Css -->
+    @*<link href="~/plugins/node-waves/waves.css" rel="stylesheet" />*@
+    <!-- Animation Css -->
+    @*<link href="~/plugins/animate-css/animate.css" rel="stylesheet" />*@
+    <!-- Morris Chart Css-->
+    @*<link href="~/plugins/morrisjs/morris.css" rel="stylesheet" />*@
+    <!-- Multi Select Css -->
+    @*<link href="~/plugins/multi-select/css/multi-select.css" rel="stylesheet">*@
+    <!-- Bootstrap Spinner Css -->
+    @*<link href="~/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">*@
+    <!-- Bootstrap Select Css -->
+    @*<link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />*@
+    <!-- Custom Css -->
+    @*<link href="~/css/style.css" rel="stylesheet">*@
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    @*<link href="~/css/themes/all-themes.css" rel="stylesheet" />*@
+
+    <!-- Bootstrap Core Css -->
+    <link href="~/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Waves Effect Css -->
+    <link href="~/plugins/node-waves/waves.css" rel="stylesheet" />
+    <!-- Animation Css -->
+    <link href="~/plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Colorpicker Css -->
+    <link href="~/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+    <!-- Dropzone Css -->
+    <link href="~/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <!-- Multi Select Css -->
+    <link href="~/plugins/multi-select/css/multi-select.css" rel="stylesheet">
+    <!-- Bootstrap Spinner Css -->
+    <link href="~/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+    <!-- Bootstrap Tagsinput Css -->
+    <link href="~/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+    <!-- Bootstrap Select Css -->
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <!-- noUISlider Css -->
+    <link href="~/plugins/nouislider/nouislider.min.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="~/css/themes/all-themes.css" rel="stylesheet" />
+
+    <style>
+        .card label {
+            font-size: 1.2em;
+        }
+
+        .card input {
+            font-size: 1.2em;
+        }
+
+        .card textarea {
+            font-size: 1.2em;
+        }
+
+        section.content {
+            margin: 60px 15px 0 315px;
+            -moz-transition: 0.5s;
+            -o-transition: 0.5s;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+        }
+
+        .card {
+            background: #fff;
+            min-height: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            margin-bottom: 30px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -ms-border-radius: 2px;
+            border-radius: 2px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body class="theme-orange">
+
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    @*<div class="search-bar">
+            <div class="search-icon">
+                <i class="material-icons">search</i>
+            </div>
+            <input type="text" placeholder="搜索名称/事业部">
+            <div class="close-search">
+                <i class="material-icons">close</i>
+            </div>
+        </div>*@
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src="~/images/logo.png" width="140" height="40" />
+                @*<a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>*@
+                @*<a href="javascript:void(0);" class="navbar-toggle js-search" data-close="true"><i class="material-icons">search</i></a>*@
+
+                @*<a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>*@
+
+                @*<a href="javascript:void(0);" class="bars"></a>*@
+                <a class="" style="color: #ffffff; font-size: 16px;margin-left:15px;" href="index.html">|</a>
+                <a class="" style="color: #ffffff; font-weight: bold; font-size: 18px;margin-left:10px;" href="index.html">访客来访申报</a>
+                @*<a class="navbar-brand" href="index.html">ADMINBSB - MATERIAL DESIGN</a>*@
+
+                @*<a onclick="copyText()"><i class="material-icons pull-right col-blue">content_copy</i> </a>*@
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    @*<li class="pull-right"><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>*@
+                    <!-- #END# Call Search -->
+                    <!-- Notifications -->
+                    <!-- #END# Notifications -->
+                    <!-- Tasks -->
+                    <!-- #END# Tasks -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+
+
+
+    <div class="card">
+        @*<div class="header">*@
+        @*<h2>
+                绿都地产供应商疫情信息统计表
+            </h2>*@
+        <small>
+            <div style="padding:0px 15px 0px 15px; background-color: #f5f5f5; ">
+                <br />
+                尊敬的绿都合作伙伴：<br />
+                &nbsp; &nbsp; &nbsp; &nbsp; 近期各地陆续爆发新型冠状病毒感染的肺炎，面对突发而来的疫情，绿都地产为应对疫情影响，积极安排相关措施，需供应商来访积极配合填写防疫信息登记表。感谢您对绿都地产一如既往的支持！ <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; 本防疫信息采集，只用于绿都地产内部统计分析，不会外传。<br />
+                <br />
+                绿都地产<br />
+                二O二O年二月九日<br />
+                <br />
+            </div>
+        </small>
+        @*<ul class="header-dropdown m-r--5">
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons">more_vert</i>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="javascript:void(0);">Action</a></li>
+                        <li><a href="javascript:void(0);">Another action</a></li>
+                        <li><a href="javascript:void(0);">Something else here</a></li>
+                    </ul>
+                </li>
+            </ul>*@
+        @*</div>*@
+
+        <div class="body">
+            <form id="form_validation" method="POST">
+                <div class="demo-masked-input">
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <b>是否承诺：以下信息认真填写、且保证真实<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">euro_symbol</i>
+                                </span>
+
+                                <select id="IsPromise" class="form-control show-tick">
+                                    <option>请选择...</option>
+                                    <option>是</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3">
+                            <b>来访单位名称<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">contacts</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="Supplier" type="text" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b>姓名<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">person</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="CName" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b>联系电话<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">phone_iphone</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="Telephone" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        
+                   
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <b>身份证号<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">place</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="IDNumber" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b id="bDescribe">当日体温<span id="spanDescribe" style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="Temperature" type="text" class="form-control" placeholder="36.7">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3">
+                            <b>14日内本人及同住人员是否途经或从武汉/绥芬河/满洲里/港澳台/境外返回<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">euro_symbol</i>
+                                </span>
+
+                                <select id="IsPass" class="form-control show-tick">
+                                    <option>请选择...</option>
+                                    <option>是</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <b>14日内本人及同住人员是否接触从武汉/绥芬河/满洲里/港澳台/境外返回人员<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">euro_symbol</i>
+                                </span>
+
+                                <select id="IsContact" class="form-control show-tick">
+                                    <option>请选择...</option>
+                                    <option>是</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        
+
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <b>14日内本人及同住人员是否接触过疑似/确诊病例或行动轨迹重合<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">euro_symbol</i>
+                                </span>
+
+                                <select id="IsCoincidence" class="form-control show-tick">
+                                    <option>请选择...</option>
+                                    <option>是</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b>14日内本人及同住人员是否在发热门诊就<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">euro_symbol</i>
+                                </span>
+
+                                <select id="IsSeeDoctor" class="form-control show-tick">
+                                    <option>请选择...</option>
+                                    <option>是</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b>14日内本人及同住人员是否有发热/咳嗽/鼻塞/流涕/腹泻/咽痛/呼吸困难等不适症状<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">euro_symbol</i>
+                                </span>
+
+                                <select id="Isolated" class="form-control show-tick">
+                                    <option>请选择...</option>
+                                    <option>是</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-3">
+                            <b>是否承诺：1、本人在绿都办公区期间及从绿都办公区返回后14天内，若本人及同住人员出现发热/咳嗽/鼻塞/流涕/腹泻/咽痛/呼吸困难等不适症状/被判定为疑似、确诊病例，需第一时间告知绿都对接部门，并遵循指示尽速隔离、就近至定点医院就医，并向绿都对口部门及时、如实同步病情和诊断结果。2、配合绿都进行来访后14天内的健康追踪<span style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">euro_symbol</i>
+                                </span>
+
+                                <select id="IsInform" class="form-control show-tick">
+                                    <option>请选择...</option>
+                                    <option>是</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <b id="bDescribe">当前居住地（精确到门牌号）<span id="spanDescribe" style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="CurrentAddress" type="text" class="form-control" placeholder="河南省郑州市二七区某某小区X号楼X单元1001">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b id="bDescribe">申请来访地点<span id="spanDescribe" style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="VisitAddress" type="text" class="form-control" value="@ViewData["VisitAddress"]" readonly="readonly">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <b id="bDescribe">其他事项说明<span id="spanDescribe" style="color:red;">*</span></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input id="Oexplain" type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-primary m-t-15 waves-effect pull-right" onclick="CustomerSubmit_onclick()">提交</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript">
+
+
+        function CustomerSubmit_onclick() {
+            //获取控件值
+            var IsPromise = $("#IsPromise option:selected").text();
+            var Supplier = $("#Supplier").val();
+            var CName = $("#CName").val();
+            var Telephone = $("#Telephone").val();
+
+            var IDNumber = $("#IDNumber").val();
+            var Temperature = $("#Temperature").val();
+            var IsPass = $("#IsPass option:selected").text();
+            var IsContact = $("#IsContact option:selected").text();
+
+            var IsCoincidence = $("#IsCoincidence option:selected").text();
+            var IsSeeDoctor = $("#IsSeeDoctor option:selected").text();
+            var Isolated = $("#Isolated option:selected").text();
+            var IsInform = $("#IsInform option:selected").text();
+
+            var CurrentAddress = $("#CurrentAddress").val();
+            var VisitAddress = $("#VisitAddress").val();
+            var Oexplain = $("#Oexplain").val();
+
+            //必填项验证
+            if (IsPromise == "请选择..." || Supplier == "" || CName == "" || Telephone == ""
+                || IDNumber == "" || Temperature == "" || IsPass == "请选择..." || IsContact == "请选择..."
+                || IsCoincidence == "请选择..." || IsSeeDoctor == "请选择..." || Isolated == "请选择..." || IsInform == "请选择..."
+                || CurrentAddress == "" || Oexplain ==""
+                      ) {
+                alert("请填写必填项！");
+                return;
+            }
+
+            //“联系电话”格式验证
+            if (isPhoneNo(Telephone) == false) {
+                alert("请填写正确的“联系电话”！");
+                return;
+            }
+            //“身份证”格式验证
+            if (isCardNo(IDNumber) == false) {
+                alert("请填写正确的“身份证”！");
+                return;
+            }
+
+            //“当日体温”格式验证
+            if ($.isNumeric(Temperature) == false) {
+                alert("请填写正确的“当日体温”！");
+                return;
+            }
+
+            //提交
+            $.post("/YQ/AddCustomer", {
+                IsPromise: IsPromise,
+                Supplier: Supplier,
+                CName: CName,
+                Telephone: Telephone,
+                IDNumber: IDNumber,
+                Temperature:Temperature,
+                IsPass: IsPass,
+                IsContact: IsContact,
+                IsCoincidence: IsCoincidence,
+                IsSeeDoctor:IsSeeDoctor,
+                Isolated: Isolated,
+                IsInform: IsInform,
+                CurrentAddress: CurrentAddress,
+                VisitAddress: VisitAddress,
+                Oexplain: Oexplain
+            }, function (response) {
+                alert(response);
+                if (response == '提交成功！') {
+                    window.location.reload();
+                }
+            });
+
+        }
+
+        //验证日期格式
+        function isDate(dateString) {
+            if (dateString.trim() == "") {
+                alert("请输入日期");
+                return false;
+            }
+            var r = dateString.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/);
+            if (r == null) {
+                alert("请输入格式正确的日期\n\r日期格式：yyyy-mm-dd\n\r例    如：2020-01-01\n\r");
+                return false;
+            }
+            var d = new Date(r[1], r[3] - 1, r[4]);
+            var num = (d.getFullYear() == r[1] && (d.getMonth() + 1) == r[3] && d.getDate() == r[4]);
+            if (num == 0) {
+                alert("请输入格式正确的日期\n\r日期格式：yyyy-mm-dd\n\r例    如：2020-01-01\n\r");
+            }
+            return (num != 0);
+        }
+
+        // 验证手机号
+        function isPhoneNo(phone) {
+            var pattern = /^1[34578]\d{9}$/;
+            return pattern.test(phone);
+        }
+
+        // 验证身份证
+        function isCardNo(card) {
+            var pattern = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            return pattern.test(card);
+        }
+    </script>
+
+
+
+    <!-- Jquery Core Js -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="~/plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Select Plugin Js -->
+    <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="~/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- Bootstrap Colorpicker Js -->
+    <script src="~/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <!-- Dropzone Plugin Js -->
+    <script src="~/plugins/dropzone/dropzone.js"></script>
+    <!-- Input Mask Plugin Js -->
+    <script src="~/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+    <!-- Multi Select Plugin Js -->
+    <script src="~/plugins/multi-select/js/jquery.multi-select.js"></script>
+    <!-- Jquery Spinner Plugin Js -->
+    <script src="~/plugins/jquery-spinner/js/jquery.spinner.js"></script>
+    <!-- Bootstrap Tags Input Plugin Js -->
+    <script src="~/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+    <!-- noUISlider Plugin Js -->
+    <script src="~/plugins/nouislider/nouislider.js"></script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="~/plugins/node-waves/waves.js"></script>
+    <!-- Custom Js -->
+    <script src="~/js/admin.js"></script>
+    <script src="~/js/pages/forms/advanced-form-elements.js"></script>
+    <!-- Jquery Validation Plugin Css -->
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <!-- Demo Js -->
+    <script src="~/js/demo.js"></script>
+</body>
+</html>
